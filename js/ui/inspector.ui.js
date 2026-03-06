@@ -5,6 +5,7 @@
     init() {
       const latEl = document.getElementById("inspector-lat");
       const lonEl = document.getElementById("inspector-lon");
+      const probability = document.getElementById("inspector-probability");
       const intensityEl = document.getElementById("inspector-intensity");
       const cloudsEl = document.getElementById("inspector-clouds");
       const dayNightEl = document.getElementById("inspector-daynight");
@@ -60,6 +61,7 @@
         intensityEl.textContent = fmtIntensity(selection?.intensity);
         cloudsEl.textContent = fmtClouds(selection?.clouds);
         dayNightEl.textContent = fmtDayNight(selection?.isDay);
+        probability.textContent = selection?.intensity * (100 - selection?.clouds)/100 || "-";
 
         if (hintEl) {
           hintEl.textContent = "Datos actualizados para el punto seleccionado.";
