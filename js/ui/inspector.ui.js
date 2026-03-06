@@ -61,7 +61,7 @@
         intensityEl.textContent = fmtIntensity(selection?.intensity);
         cloudsEl.textContent = fmtClouds(selection?.clouds);
         dayNightEl.textContent = fmtDayNight(selection?.isDay);
-        probability.textContent = selection?.intensity * (100 - selection?.clouds)/100 || "-";
+        probability.textContent = `${(selection?.intensity * (100 - selection?.clouds)/100)}%` || "-";
 
         if (hintEl) {
           hintEl.textContent = "Datos actualizados para el punto seleccionado.";
